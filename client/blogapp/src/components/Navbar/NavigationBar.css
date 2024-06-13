@@ -1,0 +1,15 @@
+
+  .nav-link.active {
+    color: #fff !important; 
+    font-size: 1.1rem; 
+    font-weight: bold; 
+    
+    
+  }
+  
+  .nav-link:hover {
+    color: #cceeff; 
+    text-decoration: none;
+    text-decoration:underline;
+  }
+  

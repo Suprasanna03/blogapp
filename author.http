@@ -1,0 +1,75 @@
+###author registration
+POST http://localhost:4000/author-api/user
+Content-Type: application/json
+
+{
+    "userType": "author",
+    "username": "siri",
+    "password": "siri",
+    "email": "siri@gmail.com"
+}
+
+###author login
+POST http://localhost:4000/author-api/login
+Content-Type: application/json
+
+{
+    "userType": "author",
+    "username": "Bhanu",
+    "password": "bhanu"
+}
+
+###add new article
+POST http://localhost:4000/author-api/article
+Content-Type: application/json
+
+{
+    "articleId":"{{$timestamp}}",
+    "title":"JAVA",
+    "category":"Programming",
+    "content":"Java is a programming language and a platform. Java is a high level, robust, object-oriented and secure programming language.",
+    "dateOfCreation":"{{$datetime iso8601}}",
+    "dateOfModification":"{{$datetime iso8601}}",
+    "username":"Bhanu",
+    "comments":[ ],
+    "status":true
+
+}
+
+###update an article by author
+PUT http://localhost:4000/author-api/article
+Content-Type: application/json
+
+{
+    "articleId":"1709226871",
+    "title":"JAVA",
+    "category":"Programming",
+    "content":"Java is a programming language and a platform. Java is a high level, robust.",
+    "dateOfCreation":"2024-02-29T17:14:31.946Z",
+    "dateOfModification":"{{$datetime iso8601}}",
+    "username":"Bhanu",
+    "comments":[ ],
+    "status":true
+
+}
+
+###soft delete article by id
+PUT http://localhost:4000/author-api/article/1709226871
+Content-Type: application/json
+
+{
+    "articleId":"1709226871",
+    "title":"JAVA",
+    "category":"Programming",
+    "content":"Java is a programming language and a platform. Java is a high level, robust.",
+    "dateOfCreation":"2024-02-29T17:14:31.946Z",
+    "dateOfModification":"{{$datetime iso8601}}",
+    "username":"Bhanu",
+    "comments":[ ],
+    "status":true
+
+}
+
+###get article of same author by username
+GET http://localhost:4000/author-api/article/Bhanu
+

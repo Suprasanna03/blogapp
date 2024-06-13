@@ -1,0 +1,33 @@
+###user registration
+POST http://localhost:4000/user-api/user
+Content-Type: application/json
+
+{
+    "userType": "user",
+    "username": "Kiran",
+    "password": "kiran",
+    "email": "kiran@gmail.com"
+}
+
+###user login
+POST http://localhost:4000/user-api/login
+Content-Type: application/json
+
+{
+    "userType": "user",
+    "username": "aishwarya",
+    "password": "aish"
+}
+
+### reading articles of all users
+GET http://localhost:4000/user-api/articles
+
+### write comment
+POST http://localhost:4000/user-api/comment/1709226871
+Content-Type: application/json
+
+{
+    "articleId":"1709226871",
+    "username": "Kiran",
+    "comment":"Amazing content"
+}
